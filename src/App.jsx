@@ -10,9 +10,9 @@ function App() {
         <div className="w-full flex-grow relative">
           <Editor />
         </div>
-        <span className="text-sm text-gray-500">
+        {/* <span className="text-sm text-gray-500">
           Note: Use @ for callback feature
-        </span>
+        </span> */}
       </div>
     </>
   );
