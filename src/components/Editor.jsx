@@ -8,7 +8,11 @@ import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
-const theme = {};
+const theme = {
+  ltr: "ltr",
+  rtl: "rtl",
+  paragraph: "editor-paragraph",
+};
 
 // Lexical React plugins are React components, which makes them
 // highly composable. Furthermore, you can lazy load plugins if
@@ -59,8 +63,12 @@ export default function Editor() {
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <PlainTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>Enter some text...</div>}
+        contentEditable={
+          <ContentEditable className="w-full h-full p-2 border outline-none" />
+        }
+        placeholder={
+          <div className="editor-placeholder">Enter some text...</div>
+        }
         ErrorBoundary={LexicalErrorBoundary}
       />
       <HistoryPlugin />
